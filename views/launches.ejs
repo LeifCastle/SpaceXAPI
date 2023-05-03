@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <title>Launches</title>
+  </head>
+  <body>
+    <h1>SpaceX Launches</h1>
+    <%launches.forEach(launch => {%>
+    <div class="card">
+      <div class="card-content">
+        <p class="title"><%=launch.name%></p>
+        <p class="subtitle"><%=launch.description%></p>
+      </div>
+      <footer class="card-footer">
+        <!-- <p class="card-footer-item">
+          <span> Landing Attempts: <%=launch.landing_attempts%> </span>
+        </p>
+        <p class="card-footer-item">
+          <span> Sucesfull Landings: <%=launch.landing_successes%> </span>
+        </p>
+        <p class="card-footer-item">
+          <span><%=launch.locality%>, <%=launch.region%> </span>
+        </p> -->
+        <p class="card-footer-item">
+          <span> Success: <%=launch.success%> </span>
+        </p>
+        <%if(launch.success===false){%>
+        <p class="card-footer-item">
+          <span> <%=launch.failures[0].reason%> </span>
+        </p>
+        <%}%>
+      </footer>
+    </div>
+    <hr />
+    <%})%>
+  </body>
+</html>

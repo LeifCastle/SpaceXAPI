@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <title>Launchpads</title>
+  </head>
+  <body>
+    <h1>SpaceX Launchpads</h1>
+    <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <%for (let pad in launchpads[0]){%>
+            <%if(pad != "launches" && pad!= "details" && pad !=
+            "rockets"){ %>
+          <th><%=pad%></th>
+          <%}}%>
+        </tr>
+      </thead>
+      <tbody>
+        <%launchpads.forEach(launchpad => {%>
+        <tr>
+          <%for (let data in launchpad){%> <%if(data === "images"){%>
+          <th><a href="<%=launchpad[data].large%>">Images</a></th>
+          <% } else if(data != "launches" && data != "details" && data !=
+          "rockets"){%>
+          <th><%=launchpad[data]%></th>
+          <% } %> <% }%>
+        </tr>
+        <%});%>
+      </tbody>
+    </table>
+    </div>
+    </body>
+  </body>
+</html>

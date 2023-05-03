@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <title>Crew</title>
+  </head>
+  <body>
+    <h1>SpaceX Crew</h1>
+    <%crew.forEach(member => {%>
+        <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="<%=member.image%>" alt="Crewmember">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4"><%=member.name%></p>
+                  <p class="subtitle is-6">@<%=member.agency%></p>
+                </div>
+              </div>
+              <div class="content">
+                <p>Status: <%=member.status%></p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <hr />
+    <%})%>
+  </body>
+</html>

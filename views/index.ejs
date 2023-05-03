@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <div class="navbar-item">
+          <img
+            src="https://th.bing.com/th/id/OIP.mVba_4WLDWUbRjs3P9OgpAHaE-?pid=ImgDet&rs=1"
+            width="112"
+          />
+        </div>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="http://localhost:8000/"> Home </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/capsules">
+            Capsules
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/cores"> Cores </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/crew"> Crew </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/dragons">
+            Dragons
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/landpads">
+            Landpads
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/launches">
+            Launches
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/launchpads">
+            Launchpads
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/payloads">
+            Payloads
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item" href="http://localhost:8000/rockets">
+            Rockets
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="card">
+      <div class="card-content">
+        <p class="title"><%=company.name%> founded by <%=company.ceo%></p>
+        <p class="subtitle"><%=company.summary%></p>
+        <p class="subtitle">
+          <%= company.headquarters.address%> <%=company.headquarters.city%>,
+          <%=company.headquarters.state%>
+        </p>
+      </div>
+      <footer class="card-footer">
+        <p class="card-footer-item">
+          <span>
+            View on
+            <a href="https://twitter.com/SpaceX">Twitter</a>
+          </span>
+        </p>
+        <p class="card-footer-item">
+          <span>
+            Browse photos on
+            <a href="https://www.flickr.com/photos/spacex/">Flicker</a>
+          </span>
+        </p>
+        <p class="card-footer-item">
+          <span>
+            Explore our website
+            <a href="https://www.spacex.com/">SpaceX</a>
+          </span>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

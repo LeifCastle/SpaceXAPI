@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <title>Payloads</title>
+  </head>
+  <body>
+    <h1>SpaceX Payloads</h1>
+    <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <%for (let pad in payloads[0]){%>
+            <%if(pad != "dragon"){ %>
+          <th><%=pad%></th>
+          <%}}%>
+        </tr>
+      </thead>
+      <tbody>
+        <%payloads.forEach(load => {%>
+        <tr>
+          <%for (let data in load){%> <%if(data === "images"){%>
+          <th><a href="<%=load[data].large%>">Images</a></th>
+          <% } else if(data != "dragon"){%>
+          <th><%=load[data]%></th>
+          <% } %> <% }%>
+        </tr>
+        <%});%>
+      </tbody>
+    </table>
+    </div>
+    </body>
+  </body>
+</html>

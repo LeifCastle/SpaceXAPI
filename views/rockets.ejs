@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <title>Rockets</title>
+  </head>
+  <body>
+    <h1>SpaceX Rockets</h1>
+    <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <%for (let rocket in rockets[0]){%>
+          <th><%=rocket%></th>
+          <%}%>
+        </tr>
+      </thead>
+      <tbody>
+        <%rockets.forEach(rocket => {%>
+        <tr>
+          <%for (let data in rocket){%> <%if(data === "images"){%>
+          <th><a href="<%=rocket[data].large%>">Images</a></th>
+          <% } else if(data != "details"){%>
+          <th><%=rocket[data]%></th>
+          <% } %> <% }%>
+        </tr>
+        <%});%>
+      </tbody>
+    </table>
+    </div>
+    </body>
+  </body>
+</html>
